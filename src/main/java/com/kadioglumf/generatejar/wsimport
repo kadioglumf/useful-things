@@ -1,0 +1,11 @@
+wsimport -keep -p com.kadioglumf.tutorials -clientjar wsdlclient.jar a.wsdl
+
+
+mvn install:install-file –Dfile=C:\dev\app.jar -DgroupId=com.kadioglumf.tutorials -DartifactId=example-app -Dversion=1.0
+
+
+<!--<dependency>
+    <groupId>com.kadioglumf.tutorials</groupId>
+    <artifactId>example-app</artifactId>
+    <version>1.0</version>
+</dependency>-->

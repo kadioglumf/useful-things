@@ -1,0 +1,7 @@
+com\kadioglumf\validator\minvalidator\CustomMin$List.class
+com\kadioglumf\Main.class
+com\kadioglumf\propertyaccessor\PropertyAccessor.class
+com\kadioglumf\validator\minvalidator\BigDecimalCustomMinValidator.class
+com\kadioglumf\validator\minvalidator\CustomMin.class
+com\kadioglumf\validator\model\Person.class
+com\kadioglumf\validator\minvalidator\AbstractCustomMinValidator.class

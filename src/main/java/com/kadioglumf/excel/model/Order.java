@@ -3,7 +3,7 @@ package com.kadioglumf.excel.model;
 import com.kadioglumf.excel.annotation.Excel;
 import com.kadioglumf.excel.annotation.ExcelColumn;
 
-@Excel(sheetName = "order")
+@Excel(sheetName = "order.xlsx")
 public class Order extends BaseExcel {
 
     @ExcelColumn(col = 0, columnName = "NAME")

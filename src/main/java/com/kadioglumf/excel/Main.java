@@ -5,6 +5,7 @@ import com.kadioglumf.excel.model.Order;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,10 @@ public class Main {
         try
         {
             XSSFWorkbook xssfWorkbook = new ExcelWriter().writeOnWorkbook(list, clazz);
-            byte[] decodedBytes = getWorkbookAsByteArray(xssfWorkbook);
+            //byte[] decodedBytes = getWorkbookAsByteArray(xssfWorkbook);
+            FileOutputStream outputStream = new FileOutputStream(xssfWorkbook.getSheetName(0));
+            xssfWorkbook.write(outputStream);
+            xssfWorkbook.close();
             /*
             CustomAttachment attachment = new CustomAttachment();
             attachment.setDocumentContent(decodedBytes);
@@ -33,10 +37,13 @@ public class Main {
             customAttachments.add(attachment);
 
              */
-        }
-        catch (Exception exception)
+        } catch (IOException exception) {
+            System.out.println("File IO error: ");
+            exception.printStackTrace();
+        } catch (Exception exception)
         {
-            //logger.error("", exception);
+            System.out.println("exception: ");
+            exception.printStackTrace();
         }
         return customAttachments;
     }
